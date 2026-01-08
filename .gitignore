@@ -1,0 +1,25 @@
+# --- Python & Environment ---
+# 忽略虛擬環境與套件
+venv/
+env/
+.env/
+.venv/
+bin/
+lib/
+include/
+
+# 忽略 Python 執行產生的暫存檔
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Jupyter Notebook ---
+# 忽略 Notebook 的自動存檔點
+.ipynb_checkpoints/
+
+# --- System & IDE ---
+# 忽略作業系統產生的隱藏檔
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
