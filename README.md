@@ -24,23 +24,16 @@ To ensure the clustering model (K-Means) accurately captures wine profiles, the 
 
 ### 1. Feature Interaction & Selection
 Using the **Correlation Heatmap**, I identified key chemical drivers. This exploratory step ensured that we retained features with the highest impact on wine characteristics while being aware of multi-collinearity between acid-related features.
-<p align="center"> <img src="./assets/corr_heatmap.png" alt="corr_heatmap" width="70%"> </p>
+<p align="center"> <img src="./assets/corr_heatmap.png" alt="corr_heatmap" width="90%"> </p>
 
 ### 2. Strategic Scaling for Robustness 
 The **Boxplot analysis** revealed significant outliers. To handle this without losing valuable extreme-case data, I compared two scaling methods on the `total sulfur dioxide` feature:
 * **StandardScaler (Chosen)**: Maintains the distribution shape and prevents normal data from being compressed, which is vital for distance-based clustering.
 * **MinMaxScaler (Rejected)**: Visualized as a "failure case" where outliers caused the majority of data to collapse into a narrow range (0-0.2).
 
-<table style="width: 100%;">
-  <tr>
-    <td style="width: 50%; text-align: center;">
-      <img src="./assets/outlier.png" alt="outlier" style="width: 100%;">
-    </td>
-    <td style="width: 50%; text-align: center;">
-      <img src="./assets/scaling_theory_comparison.png" alt="scaling_theory_comparison" style="width: 100%;">
-    </td>
-  </tr>
-</table>
+<p align="center"> <img src="./assets/outlier.png" alt="outlier" width="90%"> </p>
+<p align="center"> <img src="./assets/scaling_theory_comparison.png" alt="scaling_theory_comparison" width="90%"> </p>
+
 
 ### 3. Connection to Unsupervised Learning
 The cleaned and Z-score normalized dataset was then fed into the **K-Means algorithm**. Because of the preprocessing steps above, the resulting clusters represent genuine chemical profiles rather than artifacts of unscaled data.
@@ -53,21 +46,14 @@ To identify the natural groupings within the wine dataset, I employed two valida
 - Elbow Method: Observed the "Within-Cluster Sum of Squares" (WCSS). A clear bend is visible, suggesting $K=3$ or $K=4$ as the elbow point.
 - Silhouette Method: Evaluated the separation distance between clusters. The peak score confirms that $K=4$ provides the most cohesive and distinct groupings.
 
-<table style="width: 100%;">
-  <tr>
-    <td style="width: 50%; text-align: center;">
-      <img src="./assets/elbow_method.png" alt="elbow_method" style="width: 100%;">
-    </td>
-    <td style="width: 50%; text-align: center;">
-      <img src="./assets/silhouette_method.png" alt="silhouette_method" style="width: 100%;">
-    </td>
-  </tr>
-</table>
+<p align="center"> <img src="./assets/elbow_method.png" alt="elbow_method" width="90%"> </p>
+<p align="center"> <img src="./assets/silhouette_method.png" alt="silhouette_method" width="90%"> </p>
+
 
 ### 2. Cluster Visualization via PCA
 Since the data has 11 dimensions, I applied Principal Component Analysis (PCA) to project the clusters into a 2D space.
 - Insight: The 4 clusters are well-separated in the PCA plane, proving that the chemical features we scaled with `StandardScaler` successfully formed distinct "wine personalities."
-<p align="center"> <img src="./assets/pca.png" alt="pca" width="70%"> </p>
+<p align="center"> <img src="./assets/pca.png" alt="pca" width="90%"> </p>
 
 ### 3. Cluster Profiling: Defining "Wine Personalities"
 By analyzing the Radar Chart and Feature Bar Chart, we can define the unique characteristics of each group:
@@ -76,30 +62,15 @@ By analyzing the Radar Chart and Feature Bar Chart, we can define the unique cha
 - Cluster 2 (Green) - "The High Acidity": Features significantly higher fixed acidity and citric acid.
 - Cluster 3 (Gold) - "The High Sulfur Dioxide": This group contains wines with exceptionally high total sulfur dioxide, likely a specific style or preservation method.
 
-<table style="width: 100%;">
-  <tr>
-    <td style="width: 50%; text-align: center;">
-      <img src="./assets/all_cluster.png" alt="all_cluster" style="width: 100%;">
-    </td>
-    <td style="width: 50%; text-align: center;">
-      <img src="./assets/cluster_feature_bar.png" alt="cluster_feature_bar" style="width: 100%;">
-    </td>
-  </tr>
-</table>
+<p align="center"> <img src="./assets/all_cluster.png" alt="all_cluster" width="90%"> </p>
+<p align="center"> <img src="./assets/cluster_feature_bar.png" alt="cluster_feature_bar" width="90%"> </p>
+
 
 ### 4. Quality Correlation Validation
 Finally, I checked the quality distribution for each cluster. Even though the model was unsupervised (it never saw the "quality" label), it successfully grouped wines with different quality potentials, with Cluster 1 showing a clear lead in median quality score.
 
-<table style="width: 100%;">
-  <tr>
-    <td style="width: 50%; text-align: center;">
-      <img src="./assets/clusters_quality_score.png" alt="clusters_quality_score" style="width: 100%;">
-    </td>
-    <td style="width: 50%; text-align: center;">
-      <img src="./assets/clusters_quality_distribution.png" alt="clusters_quality_distribution" style="width: 100%;">
-    </td>
-  </tr>
-</table>
+<p align="center"> <img src="./assets/clusters_quality_score.png" alt="clusters_quality_score" width="90%"> </p>
+<p align="center"> <img src="./assets/clusters_quality_distribution.png" alt="clusters_quality_distribution" width="90%"> </p>
 
 ---
 
