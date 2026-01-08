@@ -38,7 +38,7 @@ The **Boxplot analysis** revealed significant outliers. To handle this without l
 The cleaned and Z-score normalized dataset was then fed into the **K-Means algorithm**. Because of the preprocessing steps above, the resulting clusters represent genuine chemical profiles rather than artifacts of unscaled data.
 
 ---
- ## 🤖 Unsupervised Learning: Clustering Analysis
+ ## 🤖 Unsupervised Learning (Clustering)
  ### 1. Determining Optimal Clusters ($K$)
 To identify the natural groupings within the wine dataset, I employed two validation metrics:
 
