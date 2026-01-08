@@ -21,7 +21,7 @@ This repository contains the research and experimental phase of the Wine project
 ## 📈 Exploratory Data Analysis (EDA)
 To ensure the clustering model (K-Means) accurately captures wine profiles, the following preprocessing workflow was implemented:
 
-### 1. Feature Interaction & Selection**
+### 1. Feature Interaction & Selection
 Using the **Correlation Heatmap**, I identified key chemical drivers. This exploratory step ensured that we retained features with the highest impact on wine characteristics while being aware of multi-collinearity between acid-related features.
 <p align="center"> <img src="./assets/corr_heatmap.png" alt="corr_heatmap" width="90%"> </p>
 
