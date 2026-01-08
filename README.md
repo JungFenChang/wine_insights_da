@@ -18,11 +18,10 @@ This repository contains the research and experimental phase of the Wine project
 - Dimensionality Reduction: Utilizing PCA (Principal Component Analysis) to visualize high-dimensional chemical data in 2D/3D space.
 ---
 
-## 📈 Key Insights & Visualizations
-- ### Data Engineering & Preprocessing Logic
+## 📈 Exploratory Data Analysis (EDA)
 To ensure the clustering model (K-Means) accurately captures wine profiles, the following preprocessing workflow was implemented:
 
-### 1. Feature Interaction & Selection
+### 1. Feature Interaction & Selection**
 Using the **Correlation Heatmap**, I identified key chemical drivers. This exploratory step ensured that we retained features with the highest impact on wine characteristics while being aware of multi-collinearity between acid-related features.
 <p align="center"> <img src="./assets/corr_heatmap.png" alt="corr_heatmap" width="90%"> </p>
 
@@ -57,10 +56,10 @@ Since the data has 11 dimensions, I applied Principal Component Analysis (PCA) t
 
 ### 3. Cluster Profiling: Defining "Wine Personalities"
 By analyzing the Radar Chart and Feature Bar Chart, we can define the unique characteristics of each group:
-- Cluster 0 (Dark Blue) - "The Balanced Standard": Shows average values across most features, representing the typical profile of the dataset.
-- Cluster 1 (Blue) - "The High Alcohol & Quality": Notable for higher alcohol content and higher quality scores.
-- Cluster 2 (Green) - "The High Acidity": Features significantly higher fixed acidity and citric acid.
-- Cluster 3 (Gold) - "The High Sulfur Dioxide": This group contains wines with exceptionally high total sulfur dioxide, likely a specific style or preservation method.
+- Cluster 0-"The Balanced Standard": Shows average values across most features, representing the typical profile of the dataset.
+- Cluster 1-"The High Alcohol & Quality": Notable for higher alcohol content and higher quality scores.
+- Cluster 2-"The High Acidity": Features significantly higher fixed acidity and citric acid.
+- Cluster 3-"The High Sulfur Dioxide": This group contains wines with exceptionally high total sulfur dioxide, likely a specific style or preservation method.
 
 <p align="center"> <img src="./assets/all_cluster.png" alt="all_cluster" width="90%"> </p>
 <p align="center"> <img src="./assets/cluster_feature_bar.png" alt="cluster_feature_bar" width="90%"> </p>
