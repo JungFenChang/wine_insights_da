@@ -1,4 +1,4 @@
-# 🍷 wine_insights
+# 🍷 Wine Insights
 ## _A deep dive into wine chemical characteristics using unsupervised learning and exploratory data analysis (EDA)._
 ---
 
